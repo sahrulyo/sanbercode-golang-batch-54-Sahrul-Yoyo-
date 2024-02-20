@@ -1,1 +1,13 @@
-//Hari 1 - Command Line Interface dan Git;
+/*Hari 1 - Command Line Interface dan Git;
+Data Peserta Bootcamp Digital Skill - Golang Backend Development
+1. Nama: Sahrul Yoyo
+2. Email: yoyo.ptr@gmail.com
+3. Sistem Operasi yang digunakan: MacOS
+4. Akun Github: https://github.com/sahrulyo
+5. Akun Telegram: +6281213163186
+6. Role Pekerjaan (BE/FE/DEVOPS/MAHASISWA) : FE
+7. Umur: 34 Tahun
+8. Pernah menggunakan Go? : Belum pernah
+9. Bahasa Pemrograman yg pernah dipelajari: PHP & Javascript
+10. Pernah membuat REST API? : Belum pernah
+*/
