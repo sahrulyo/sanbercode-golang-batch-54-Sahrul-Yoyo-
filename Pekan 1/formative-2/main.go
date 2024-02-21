@@ -41,14 +41,19 @@ func main() {
 	var angkaKetiga = "6"
 	var angkaKeempat = "7"
 
-	/* short variable declaration */
-	var num, err = strconv.Atoi(angkaPertama + angkaKedua + angkaKetiga + angkaKeempat)
+	total := 0
 
-	if err == nil {
-		fmt.Println(num)
-		/*total := strconv.Itoa(num)
-		fmt.Println(total)*/
+	// Konversi masing-masing digit menjadi integer dan tambahkan ke total
+	digits := []string{angkaPertama, angkaKedua, angkaKetiga, angkaKeempat}
+	for _, digit := range digits {
+		num, err := strconv.Atoi(digit)
+		if err != nil {
+			fmt.Println("Error:", err)
+			return
+		}
+		total += num
 	}
+	fmt.Println("Total:", total)
 
 	//jawaban soal 5
 	lirikLagu := "halo halo bandung"
@@ -56,7 +61,6 @@ func main() {
 
 	lirikLagu = strings.Replace(lirikLagu, "halo", "Hi", 2)
 	lirikLagu = strings.Replace(lirikLagu, "", "bandung", 0)
-	lirikLagu += " - " + strconv.Itoa(angka)
+	lirikLagu = "\"" + lirikLagu + "\"" + " - " + strconv.Itoa(angka)
 	fmt.Println(lirikLagu)
-
 }
