@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Pencari Jodoh</title>
+            </head>
+            <body>
+                <h1>Selamat datang di Pencari Jodoh!</h1>
+                <p>Isi formulir di bawah ini untuk menemukan pasangan yang cocok.</p>
+                
+                <form action="/hasil-pencarian" method="post">
+                    <label for="punyaBanyakPacar">Apakah Anda Seorang Cowok Komersial?</label>
+                    <select id="punyaBanyakPacar" name="punyaBanyakPacar">
+                        <option value="ya">Ya</option>
+                        <option value="tidak">Tidak</option>
+                    </select>
+                    
+                    <label for="pasanganSetia">Berapa Jumlah Pasangan Setia Anda?</label>
+                    <input type="number" id="pasanganSetia" name="pasanganSetia">
+                    
+                    <button type="submit">Cari Pasangan</button>
+                </form>
+            </body>
+            </html>
