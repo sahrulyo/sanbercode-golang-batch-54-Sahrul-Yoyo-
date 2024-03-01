@@ -174,3 +174,5 @@ func main() {
 	fmt.Println(output)
 	//OUTPUT hasil penjumlahan dari  6 + 8 + 12 + 14 = 40
 }
+
+//
