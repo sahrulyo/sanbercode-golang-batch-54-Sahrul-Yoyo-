@@ -139,3 +139,59 @@ func DeleteEmployee() {
     age INT NOT NULL,
     division VARCHAR(20) NOT NULL
 ); */
+
+/*CREATE TABLE categories (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    created_at TEXT UNIQUE NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+); */
+/*
+CREATE TABLE books (
+    ID          INT PRIMARY KEY AUTO_INCREMENT,
+    Title       VARCHAR(255) NOT NULL,
+    Description TEXT,
+    ImageURL    VARCHAR(255),
+    ReleaseYear INT,
+    Price       DECIMAL(10, 2),
+    TotalPage   INT,
+    Thickness   VARCHAR(50),
+    CreatedAt   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UpdatedAt   TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CategoryID  INT,
+    FOREIGN KEY (CategoryID) REFERENCES categories(id)
+); */
+
+/*
+CREATE TABLE books (
+    id          INT PRIMARY KEY AUTO_INCREMENT,
+    title       VARCHAR(255) NOT NULL,
+    description TEXT,
+    imageURL    VARCHAR(255),
+    releaseYear INT,
+    price       DECIMAL(10, 2),
+    totalPage   INT,
+    thickness   VARCHAR(50),
+    created_At   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_At   TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    categoryID  INT,
+    FOREIGN KEY (CategoryID) REFERENCES categories(id)
+); */
+
+/*
+CREATE TABLE books (
+    id          SERIAL PRIMARY KEY,
+    title       VARCHAR(255) NOT NULL,
+    description TEXT,
+    imageURL    VARCHAR(255),
+    releaseYear INT,
+    price       DECIMAL(10, 2),
+    totalPage   INT,
+    thickness   VARCHAR(50),
+    create_dAt   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_At   TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    categoryID  INT,
+    FOREIGN KEY (CategoryID) REFERENCES categories(id)
+);
+*/
