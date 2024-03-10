@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
+	"os"
 	"quiz-3/auth"
 	"quiz-3/crud"
 	"quiz-3/endpoint"
@@ -12,7 +13,9 @@ import (
 	_ "github.com/lib/pq"
 )
 
-var db *sql.DB
+var (
+	DB *sql.DB
+)
 
 // jawaban soal no 2 detailnya ada di endpoint.go ----------------------------------------------->2
 func main() {
@@ -20,9 +23,15 @@ func main() {
 
 	//jawaban soal no 3 detailnya ada di crud.go ----------------------------------------------->3
 	var err error
-	// Inisialisasi koneksi ke database
-	db, err = sql.Open("postgres", "host=localhost port=5432 user=user password=Ulyasar10389# dbname=user sslmode=disable")
 
+	dsn := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=verify-full",
+		os.Getenv("roundhouse.proxy.rlwy.net"),
+		os.Getenv("26710"),
+		os.Getenv("postgres"),
+		os.Getenv("IOIvlMqzIeTraabYeMaZfbIJtmYZbXyU"),
+		os.Getenv("railway"))
+
+	db, err := sql.Open("postgres", dsn)
 	if err != nil {
 		log.Fatal("Failed to connect to database:", err)
 	}
@@ -44,10 +53,7 @@ func main() {
 	router.DELETE("/books/:id", crud.DeleteBook)
 
 	//START SERVER
-	err = router.Run(":8005")
-	if err != nil {
-		log.Fatal("Failed to start server:", err)
-	}
+	router.Run(":" + os.Getenv("PORT"))
 
 	//TRIGER
 	if _, err := db.Exec(`
@@ -85,8 +91,6 @@ func main() {
     `); err != nil {
 		log.Fatal(err)
 	}
-
-	fmt.Println("Tabel books dan fungsi trigger berhasil dibuat.")
 
 	//jawaban soal 4 detailnya ada di auth.go -------------------------------------------------------------->4
 
