@@ -24,12 +24,13 @@ func main() {
 	//jawaban soal no 3 detailnya ada di crud.go ----------------------------------------------->3
 	var err error
 
-	dsn := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=verify-full",
-		os.Getenv("roundhouse.proxy.rlwy.net"),
-		os.Getenv("26710"),
-		os.Getenv("postgres"),
-		os.Getenv("IOIvlMqzIeTraabYeMaZfbIJtmYZbXyU"),
-		os.Getenv("railway"))
+	dsn := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
+		os.Getenv("PGHOST"),
+		os.Getenv("PGPORT"),
+		os.Getenv("PGUSER"),
+		os.Getenv("PGPASSWORD"),
+		os.Getenv("PGDATABASE"),
+	)
 
 	db, err := sql.Open("postgres", dsn)
 	if err != nil {
