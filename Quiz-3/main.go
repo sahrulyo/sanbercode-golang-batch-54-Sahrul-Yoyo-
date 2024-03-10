@@ -22,6 +22,7 @@ func main() {
 	var err error
 	// Inisialisasi koneksi ke database
 	db, err = sql.Open("postgres", "host=localhost port=5432 user=user password=Ulyasar10389# dbname=user sslmode=disable")
+
 	if err != nil {
 		log.Fatal("Failed to connect to database:", err)
 	}
